@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lagou.mapper.UsersMapper">
+    <select id = "selectList" resultType="com.lagou.entity.Users">
+        select * from users
+    </select>
+
+    <insert id="insertUser" parameterType="com.lagou.entity.Users">
+        insert into users(id,username,gender,age) values(#{id},#{username},#{gender},#{age})
+    </insert>
+
+    <update id="updateUserName" parameterType="com.lagou.entity.Users">
+        update users set username = #{username} where id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="com.lagou.entity.Users">
+        delete from users where id = #{id}
+    </delete>
+</mapper>

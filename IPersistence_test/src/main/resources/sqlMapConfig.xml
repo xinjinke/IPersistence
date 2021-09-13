@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="db.properties"></properties>
+    <environments default="dev">
+        <environment id="dev">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <!--<property name="driverClass" value="${jdbc.driver}"/>-->
+                <!--<property name="jdbcUrl" value="${jdbc.url}"/>-->
+                <!--<property name="username" value="${jdbc.username}"/>-->
+                <!--<property name="password" value="${jdbc.password}"/>-->
+                <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+                <property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/zxh_mybatis?useUnicode=true"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource = "UsersMapper.xml"></mapper>
+    </mappers>
+</configuration>
